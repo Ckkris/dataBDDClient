@@ -19,6 +19,7 @@ import com.google.common.collect.Lists;
 public class Metier implements IMetier{
 	
 	 // répositories
+	
     @Autowired
     private ClientRepository clientRepository;
     @Autowired
@@ -28,10 +29,16 @@ public class Metier implements IMetier{
     @Autowired
     private CompteRepository compteRepository;
     
-//    @Autowired
-//    private TransactionRepository transactionRepository;
+    
+    
+    //@Autowired
+    //private TransactionRepository transactionRepository;
 
+    
+    
     // implémentation interface
+    
+    
     
     //CLIENT
     @Override
@@ -43,6 +50,13 @@ public class Metier implements IMetier{
     public Client getClientById(String Login) {
     return clientRepository.findOne(Login);
 }
+    
+    public Client saveClients(Client client) {
+    	    return clientRepository.save(client);
+    	  }
+
+    
+    
 
     //COMPTE
     @Override
@@ -59,6 +73,13 @@ public class Metier implements IMetier{
     public List<Courant> findByLoginfk(String loginfk) {
     return courantRepository.findByLoginfk(loginfk);
 }
+    
+    
+    //Pas compte mais courant ou PEL
+    public Compte saveCourants(Courant courant) {
+	    return courantRepository.save(courant);
+	  }
+
     
     
 //    @Override
@@ -82,6 +103,7 @@ public class Metier implements IMetier{
 //    }
     
     
+ 
     
     
   //Arnaud
