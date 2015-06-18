@@ -28,9 +28,9 @@ public class Config {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/banque");
+        dataSource.setUrl("jdbc:postgresql://localhost:5433/banque");
         dataSource.setUsername("postgres");
-        dataSource.setPassword("basvid");
+        dataSource.setPassword("root");
         return dataSource;
 
     // l'EntityManagerFactory et le TransactionManager sont définis avec des valeurs par défaut par Spring boot
