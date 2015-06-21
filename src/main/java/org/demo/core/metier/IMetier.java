@@ -9,7 +9,7 @@ import org.demo.core.entities.PEL;
 
 public interface IMetier {
 	
-	//CLIENT
+	//CLIENT___________________
 	
 	//Liste des clients
 	public List<Client> getAllClients();
@@ -17,32 +17,30 @@ public interface IMetier {
 	//Liste client à partir de l'ID
 	public Client getClientById(String Login);
 	
-		
-	//COURANT
+	//COURANT_________________
 		
 	//Liste des courant
     public List<Courant> getAllCourants();
     
-	//Liste courant à partir de l'ID client -->Ne marche pas car id_client n'est pas l'id du compte
-	public Courant getCourantById(long id);
+	//Liste courant à partir de l'ID client ------------------->Ne marche pas car id_client n'est pas l'id du compte
+	public Courant getCourantById(String id);
 
 	// Liste des courants par le login du client
 	public List<Courant> findByLoginfk(String loginfk);
-	
-	
-	//PEL 
+
+	//PEL ______________________
 	
     //Liste des PEL
     public List<PEL> getAllPels();
     
-    
-    //COMPTE
+    //Liste des courants par le login du client
+ 	//public List<PEL> findByLoginfk1(String loginfk);
+
+    //COMPTE______________________
     
     //liste des compte d'un client
     public List<Compte> getAllComptes();
 
-    
-    
     //Transaction
     
     //liste des transactions d'un client

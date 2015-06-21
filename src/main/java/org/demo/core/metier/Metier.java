@@ -29,16 +29,10 @@ public class Metier implements IMetier{
     @Autowired
     private CompteRepository compteRepository;
     
-    
-    
     //@Autowired
     //private TransactionRepository transactionRepository;
 
-    
-    
     // implémentation interface
-    
-    
     
     //CLIENT
     @Override
@@ -55,55 +49,53 @@ public class Metier implements IMetier{
     	    return clientRepository.save(client);
     	  }
 
-    
-    
-
-    //COMPTE
-    @Override
-    public List<Courant> getAllCourants() {
-        return Lists.newArrayList(courantRepository.findAll());
-    }
-    
-    @Override
-    public Courant getCourantById(long id) {
-    return courantRepository.findOne(id);
-}
-    
-    @Override
-    public List<Courant> findByLoginfk(String loginfk) {
-    return courantRepository.findByLoginfk(loginfk);
-}
-    
-    
-    //Pas compte mais courant ou PEL
-    public Compte saveCourants(Courant courant) {
-	    return courantRepository.save(courant);
-	  }
-
-    
-    
-//    @Override
-//    public List<Courant> getCourantsClient(String login_fk) {
-//    return Lists.newArrayList(courantRepository.getCourantsClient(login_fk));
-//    }
-
-    @Override
-    public List<PEL> getAllPels() {
-        return Lists.newArrayList(pelRepository.findAll());
-    }
+    //COMPTE_________________
     
     @Override
     public List<Compte> getAllComptes() {
         return Lists.newArrayList(compteRepository.findAll());
     }
     
-//    @Override
-//    public List<Transaction> getAllTransactions() {
-//        return Lists.newArrayList(transactionRepository.findAll());
-//    }
+    //Pas compte mais courant ou PEL
+    public Compte saveCourants(Courant courant) {
+	    return courantRepository.save(courant);
+	  }
+    
+    //COURANT________________
+    
+    @Override
+    public List<Courant> getAllCourants() {
+        return Lists.newArrayList(courantRepository.findAll());
+    }
+    
+	public Courant getCourantById(String id) {
+	return courantRepository.findOne(id);
+	}
+    
+    @Override
+    public List<Courant> findByLoginfk(String loginfk) {
+    return courantRepository.findByLoginfk(loginfk);
+    }
+    
+	//@Override
+	//public List<Courant> getCourantsClient(String login_fk) {
+	//return Lists.newArrayList(courantRepository.getCourantsClient(login_fk));
+	//}
+    
+    //PEL___________________
+
+    @Override
+    public List<PEL> getAllPels() {
+        return Lists.newArrayList(pelRepository.findAll());
+    }
     
     
- 
+    //Transaction
+    
+    //@Override
+    //public List<Transaction> getAllTransactions() {
+    //return Lists.newArrayList(transactionRepository.findAll());
+    //}
     
     
   //Arnaud

@@ -44,13 +44,18 @@ public class DataBddClientApplication {
     
     // affichage du nom du client par la recherche de son login
     Client client = métier.getClientById("client1");
-    System.out.println("nom du client par son login 'client1' : " + client.getLogin());
+    System.out.println("id du client par son login 'client1' : " + client.getLogin());
     
     //Affiche le nom du client du compte par l'id d'un compte courant
-    Courant courant = métier.getCourantById(4);
+    Courant courant = métier.getCourantById("compte1");
     System.out.println("Nom du client par l'id de son compte : " + courant.getClient().getNom()); //Besoin  de virer fetch.LAZY
+   
     
     
+    //Affiche les comptes courant d'un client
+//    Courant courant = métier.getCourantById("compte1");
+//    System.out.println("Nom du client par l'id de son compte : " + courant.getClient().getNom()); //Besoin  de virer fetch.LAZY
+//   
     
 
     //COMPTE
@@ -76,17 +81,11 @@ public class DataBddClientApplication {
     List<PEL> pels = métier.getAllPels();
     display("Liste des comptes pel :", pels);
     
+    //Affiche tous les courant du client1
+    List<Courant> pelss = métier.findByLoginfk("client1");
+    display("Liste des comptes courants du client 1 :", pelss);
     
-    
-    //Méthode non native au crudrepository
-      
-    //CLIENT
-    
-    //COURANT
-    
-    
-    //Affiche tous les compte d'un client
-    
+
         context.close();
         
         System.out.println("Finished OK");

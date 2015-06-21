@@ -5,7 +5,7 @@ import java.util.List;
 import org.demo.core.entities.Courant;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CourantRepository extends CrudRepository<Courant, Long> {
+public interface CourantRepository extends CrudRepository<Courant, String> {
 	
 //	 // liste des créneaux horaires d'un médecin
 //	@Query("select c from courant c where c.login_fk=?1")

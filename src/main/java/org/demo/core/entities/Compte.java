@@ -18,13 +18,13 @@ public class Compte {
 
     //Clé étrangère
     @Column (name = "login_fk", insertable=false ,updatable=false) // ajouté
-    private String loginfk; ////meme nom que dans la table compte et non celle de la table client !!
+    private String loginfk;
 
     //clé primaire
     //@Column(name = "id_compte", unique=true, insertable = true, updatable= true)
     @Id
     @Column(name = "id_compte")
-    private Long id_compte;
+    private String id_compte;
     @Column(name ="plafond")
     private Long plafond;
     @Column(name ="montant")
@@ -36,7 +36,7 @@ public class Compte {
     public Compte(){
     }
     //constructeur par paramètre
-    public Compte(Long id, Long plaf, Long mont, Date date, String loginfk){
+    public Compte(String id, Long plaf, Long mont, Date date, String loginfk){
         this.id_compte=id;
         this.plafond=plaf;
         this.montant=mont;
@@ -60,11 +60,11 @@ public class Compte {
 		this.loginfk = loginfk;
 	}
 	
-	public Long getId_compte() {
+	public String getId_compte() {
 		return id_compte;
 	}
 	
-	public void setId_compte(Long id_compte) {
+	public void setId_compte(String id_compte) {
 		this.id_compte = id_compte;
 	}
 	
@@ -92,9 +92,9 @@ public class Compte {
 		this.dateCreation = dateCreation;
 	}
 	
-	//new SimpleDateFormat("dd/MM/yyyy").format(dateCreation)
+	//new SimpleDateFormat("dd/MM/yyyy").format(dateCreation)  %1$td-%1$tm-%1$tY
     public String toString() {
-        return String.format("Compte[%d, %d, %d, %s, %1$td-%1$tm-%1$tY]", id_compte, plafond, montant, loginfk, dateCreation);//Il faut que les paramètre soient présent dans les champs @Column
+        return String.format("Compte[%s, %d, %d, %s]", id_compte, plafond, montant, loginfk);//Il faut que les paramètre soient présent dans les champs @Column
     }
     
     //getters et setters
