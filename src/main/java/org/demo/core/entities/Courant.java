@@ -17,7 +17,7 @@ public class Courant extends Compte {
     }
 
     //constructeur avec paramètres
-    public Courant(String id, Date date, Long mont, Long plaf, String login)
+    public Courant(String id, String date, String mont, String plaf, String login)
     {
         super(id , mont , plaf, date, login);
     }

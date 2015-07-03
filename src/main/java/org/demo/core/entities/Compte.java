@@ -26,17 +26,17 @@ public class Compte {
     @Column(name = "id_compte")
     private String id_compte;
     @Column(name ="plafond")
-    private Long plafond;
+    private String plafond;
     @Column(name ="montant")
-    private Long montant;
+    private String montant;
     @Column( name = "datecreation")
-    private Date dateCreation;
+    private String dateCreation;
 
     //constructeur par defaut
     public Compte(){
     }
     //constructeur par paramètre
-    public Compte(String id, Long plaf, Long mont, Date date, String loginfk){
+    public Compte(String id, String plaf, String mont, String date, String loginfk){
         this.id_compte=id;
         this.plafond=plaf;
         this.montant=mont;
@@ -68,33 +68,33 @@ public class Compte {
 		this.id_compte = id_compte;
 	}
 	
-	public Long getPlafond() {
+	public String getPlafond() {
 		return plafond;
 	}
 	
-	public void setPlafond(Long plafond) {
+	public void setPlafond(String plafond) {
 		this.plafond = plafond;
 	}
 	
-	public Long getMontant() {
+	public String getMontant() {
 		return montant;
 	}
 	
-	public void setMontant(Long montant) {
+	public void setMontant(String montant) {
 		this.montant = montant;
 	}
 	
-	public Date getDateCreation() {
+	public String getDateCreation() {
 		return dateCreation;
 	}
 	
-	public void setDateCreation(Date dateCreation) {
+	public void setDateCreation(String dateCreation) {
 		this.dateCreation = dateCreation;
 	}
 	
 	//new SimpleDateFormat("dd/MM/yyyy").format(dateCreation)  %1$td-%1$tm-%1$tY
     public String toString() {
-        return String.format("Compte[%s, %d, %d, %s]", id_compte, plafond, montant, loginfk);//Il faut que les paramètre soient présent dans les champs @Column
+        return String.format("Compte[%s, %s, %s, %s, %s]", id_compte, plafond, montant, dateCreation, loginfk);//Il faut que les paramètre soient présent dans les champs @Column
     }
     
     //getters et setters

@@ -36,6 +36,8 @@ public class Client {
     private String adresse;
     @Column(name = "mail")
     private String mail;
+    @Column(name = "password")
+    private String password;
 
      /*   @OneToMany(fetch = FetchType.LAZY) //(mappedBy="client")
         @JoinColumn(name="id_compte")
@@ -51,7 +53,7 @@ public class Client {
     
         @Override
     public String toString() {
-        return String.format("Client[login='%s', nom='%s', prenom='%s', mail='%s', adresse='%s']", login, nom, prenom, mail, adresse); //Indispensable pour utiliser la méthode findAll()
+        return String.format("Client[login='%s', nom='%s', prenom='%s', mail='%s', adresse='%s', password='%s']", login, nom, prenom, mail, adresse, password); //Indispensable pour utiliser la méthode findAll()
     }
 
         //getters et setters pour lire le contenue des objet en lancant le controller2
@@ -80,6 +82,9 @@ public class Client {
         	return this.login;
         }
 
+        public String getPassword(){
+        	return this.password;
+        }
 
 
 		public void setLogin(String login) {

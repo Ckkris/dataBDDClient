@@ -1,6 +1,9 @@
 package org.demo.core.entities;
 
-import javax.persistence.*;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table( name ="comptepel")
@@ -14,10 +17,10 @@ public class PEL extends Compte {
     }
 
     //constructeur avec paramètres
-    /*public PEL(Long id, Date date, Long mont, Long plaf, String login)
+    public PEL(String id, String date, String mont, String plaf, String login)
     {
         super(id , mont , plaf, date, login);
-    }*/
+    }
 
     public String toString(){
         return String.format("PEL[%s]",super.toString());
