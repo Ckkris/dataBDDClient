@@ -37,7 +37,9 @@ public class Metier implements IMetier{
     // implémentation interface
     
     
-    //CLIENT
+    //CLIENT______________________________________________________________
+    
+    
     @Override
      public List<Client> getAllClients() {
         return Lists.newArrayList(clientRepository.findAll());
@@ -53,7 +55,7 @@ public class Metier implements IMetier{
     	  }
 
     
-    //COMPTE_________________
+    //COMPTE_____________________________________________________________________
     
     @Override
     public List<Compte> getAllComptes() {
@@ -61,7 +63,7 @@ public class Metier implements IMetier{
     }
     
     
-    //COURANT________________
+    //COURANT____________________________________________________________________
     
     @Override
     public List<Courant> getAllCourants() {
@@ -96,7 +98,7 @@ public class Metier implements IMetier{
 	//return Lists.newArrayList(courantRepository.getCourantsClient(login_fk));
 	//}
     
-    //PEL___________________
+    //PEL___________________________________________________________________________________
 
     @Override
     public List<PEL> getAllPels() {
